@@ -1,0 +1,67 @@
+/*
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.netflix.nebula:nebula-release-plugin:6.0.0'
+    }
+}
+*/
+plugins {
+    id "nebula.release" version "6.3.2"
+}
+
+plugins {
+    id "nebula.project" version "3.4.1"
+}
+
+project.group = 'testnebula'
+project.description = 'Test Semantic versioning using nebula'
+
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'nebula.nebula-release'
+
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+/*
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://dev-nexus-01.telensa.com:8081/repository/testnebula-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}/") {
+                authentication(userName: "sag", password: "Telensa01");
+            }
+            pom.version = "${project.version}"
+            pom.artifactId = "testnebula"
+            pom.groupId = "testnebula"
+        }
+    }
+}*/
+
+// publishing to nexus using nebula plugin
+/*publishing {
+    repositories {
+        maven {
+            url "http://dev-nexus-01.telensa.com:8081/repository/testnebula-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}'}"
+            credentials {
+                username "sag"
+                password "Telensa01"
+            }
+        }
+        mavenLocal()
+    }
+}*/
+
+//apply plugin: 'nebula.nebula-release'
+
+//release {
+    // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
+    // defaultVersionStrategy = SNAPSHOT
+//}
+
+//tasks.release.finalizedBy tasks.publish
