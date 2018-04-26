@@ -64,4 +64,8 @@ release {
      defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
 }
 
+/*
+nebulaRelease {
+    shortenedBranchPattern = /(?:(?:bugfix|feature|hotfix|release)(?:-|\/))?(.+)/
+}*/
 tasks.release.finalizedBy tasks.publish
