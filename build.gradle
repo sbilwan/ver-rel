@@ -49,8 +49,8 @@ publishing {
         maven {
             url "http://localhost:8081/repository/testnebula-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}"
             credentials {
-                username "sag"
-                password "Telensa01"
+                username "admin"
+                password "admin123"
             }
         }
         mavenLocal()
