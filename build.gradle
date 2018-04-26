@@ -44,10 +44,10 @@ uploadArchives {
 }*/
 
 // publishing to nexus using nebula plugin
-/*publishing {
+publishing {
     repositories {
         maven {
-            url "http://dev-nexus-01.telensa.com:8081/repository/testnebula-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}'}"
+            url "http://localhost:8081/repository/testnebula-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}'}"
             credentials {
                 username "sag"
                 password "Telensa01"
@@ -55,13 +55,13 @@ uploadArchives {
         }
         mavenLocal()
     }
-}*/
+}
 
 //apply plugin: 'nebula.nebula-release'
 
-//release {
+release {
     // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
-    // defaultVersionStrategy = SNAPSHOT
-//}
+     defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
+}
 
-//tasks.release.finalizedBy tasks.publish
+tasks.release.finalizedBy tasks.publish
