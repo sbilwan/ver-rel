@@ -68,4 +68,4 @@ release {
 nebulaRelease {
     shortenedBranchPattern = /(?:(?:bugfix|feature|hotfix|release)(?:-|\/))?(.+)/
 }*/
-tasks.release.finalizedBy tasks.publish
+//tasks.release.finalizedBy tasks.publish
